@@ -1,4 +1,6 @@
-﻿namespace MAUIProject
+﻿using MAUIProject.Views;
+
+namespace MAUIProject
 {
     public partial class App : Application
     {

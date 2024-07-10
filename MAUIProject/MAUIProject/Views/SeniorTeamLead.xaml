@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUIProject.Views.SeniorTeamLead"
+             Title="Senior Team Lead">
+
+    <StackLayout>        <Label             Text="List of Senior Team Leads"             FontSize="20" HorizontalOptions="Center"             TextColor="BlueViolet"             Padding="10"             FontAttributes="Bold"/>        <CollectionView ItemsSource="{Binding SeniorTeamLead}">            <CollectionView.ItemTemplate>                <DataTemplate>                    <Grid 
+                        RowDefinitions="Auto,Auto,Auto" 
+                        ColumnDefinitions="Auto,Auto" 
+                        Padding="10" 
+                        ColumnSpacing="5">
+                        <Image 
+                            Grid.RowSpan="3" 
+                            Source="femaleprofile.png" 
+                            Aspect="AspectFill" 
+                            HeightRequest ="60"  
+                            WidthRequest="60" />
+                        <Label 
+                            Grid.Column="1" 
+                            Text="{Binding Name, StringFormat='Name: {0}'}" 
+                            FontSize="18" />
+                        <Label 
+                            Grid.Row="1" 
+                            Grid.Column="1" 
+                            Text="{Binding NoOfTeams, StringFormat='Team No: {0}'}" 
+                            FontSize="18" />
+                        <Label 
+                            Grid.Row="2" 
+                            Grid.Column="2" 
+                            Text="{Binding Salary, StringFormat='Salary: {0}'}" 
+                            FontSize="18" />
+                    </Grid>                </DataTemplate>            </CollectionView.ItemTemplate>        </CollectionView>    </StackLayout>
+</ContentPage>
