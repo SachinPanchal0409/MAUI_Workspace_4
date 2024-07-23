@@ -14,9 +14,9 @@ namespace MAUIProject.ViewModels
         {
             Trainees = new List<TraineeModel>()
             {
-                new TraineeModel { Name = "Alice", Age = 25, Address = "A-street ahemedabad"},
-                new TraineeModel { Name = "Bob", Age = 30 , Address = "B-street ahemedabad"},
-                new TraineeModel { Name = "Charlie", Age = 28, Address = "C-street ahemedabad"}
+                new TraineeModel { Name = "Alice", Age = 25, Address = "A-street ahemdabad"},
+                new TraineeModel { Name = "Bob", Age = 30 , Address = "B-street ahemdabad"},
+                new TraineeModel { Name = "Charlie", Age = 28, Address = "C-street ahemdabad"}
               
             };
         }

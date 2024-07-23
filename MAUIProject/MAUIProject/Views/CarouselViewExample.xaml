@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUIProject.Views.CarouselViewExample"
+             Title="CarouselViewExample">
+    <StackLayout  Background="#BEC6A0">
+        <CarouselView ItemsSource="{Binding Items}" IndicatorView="indicatorView"   PeekAreaInsets="150">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Margin="15">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="CurrentItem">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale"
+                                        Value="1.1" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="PreviousItem">
+                                    <VisualState.Setters>
+                                        <Setter Property="Opacity"
+                                        Value="0.5" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="NextItem">
+                                    <VisualState.Setters>
+                                        <Setter Property="Opacity"
+                                        Value="0.5" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="DefaultItem">
+                                    <VisualState.Setters>
+                                        <Setter Property="Opacity"
+                                        Value="0.25" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Label 
+                            Text="Menu" 
+                            FontSize="20" 
+                            FontAttributes="Bold" 
+                            HorizontalOptions="Center" 
+                            VerticalOptions="Center"/>
+                        <Frame 
+                            BackgroundColor="Beige"
+                            HasShadow="True"
+                            BorderColor="DarkGray"
+                            CornerRadius="5"
+                            Margin="20"
+                            HeightRequest="300"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center">
+                            <StackLayout>
+                                <Label 
+                                    Text="{Binding Type}"
+                                    FontAttributes="Bold"
+                                    FontSize="18"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center" />
+                                <Image 
+                                    Source="{Binding ImageUrl}"
+                                    Aspect="AspectFill"
+                                    HeightRequest="150"
+                                    WidthRequest="150"
+                                    HorizontalOptions="Center" />
+                                <Label 
+                                    Text="{Binding Name}"
+                                    HorizontalOptions="Center" />
+                                <Label 
+                                    Text="{Binding Price}"
+                                    FontAttributes="Italic"
+                                    HorizontalOptions="Center"
+                                    MaxLines="5"
+                                    LineBreakMode="TailTruncation" />
+                                <HorizontalStackLayout 
+                                    Margin="1" 
+                                    Spacing="5" 
+                                    HorizontalOptions="Center">
+                                    <Image 
+                                    Source="starcolor.png" 
+                                    HeightRequest="25" 
+                                    WidthRequest="25"/>
+                                    <Label
+                                    Text="{Binding Rating}" 
+                                    FontSize="18"/>
+                                </HorizontalStackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+        <IndicatorView 
+            x:Name="indicatorView"
+            IndicatorColor="Green"
+            SelectedIndicatorColor="DarkGray"
+            HorizontalOptions="Center" />
+    </StackLayout>
+    
+</ContentPage>

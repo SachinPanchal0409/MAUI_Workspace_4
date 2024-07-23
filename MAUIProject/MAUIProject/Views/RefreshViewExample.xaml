@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUIProject.Views.RefreshViewExample"
+             xmlns:viewModels="clr-namespace:MAUIProject.ViewModels"
+             Title="RefreshViewExample">
+
+    <RefreshView IsRefreshing="{Binding IsRefreshing}" Command="{Binding RefreshCommand}">
+        <ScrollView>
+            <CollectionView                 ItemsSource="{Binding RefreshViewExampleModels}">                <CollectionView.ItemTemplate>                    <DataTemplate>                        <StackLayout>
+                            <Image Source="{Binding ItemImage}" HeightRequest="200" WidthRequest="200"/>
+                            <Label Margin="10,5,10,5" FontSize="18" HorizontalOptions="Center" FontAttributes="Bold" Text="{Binding Name}" />
+                            <Label Margin="10,5,10,5" FontSize="15" Text="{Binding Description}" />
+                        </StackLayout>                    </DataTemplate>                </CollectionView.ItemTemplate>            </CollectionView>
+            
+        </ScrollView>
+    </RefreshView>
+
+</ContentPage>

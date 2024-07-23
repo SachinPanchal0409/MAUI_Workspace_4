@@ -2,7 +2,19 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MAUIProject.Views.ProjectManager"
+             xmlns:local="clr-namespace:MAUIProject.Views"
              Title="Project Manager">
-
-    <StackLayout>        <Label             Text="List of Project Manager"             FontSize="20"             HorizontalOptions="Center"             TextColor="BlueViolet" Padding="10"             FontAttributes="Bold"/>        <CollectionView             ItemsSource="{Binding ProjectManager}">            <CollectionView.ItemTemplate>                <DataTemplate>                    <Grid                         RowDefinitions="Auto, Auto"                         ColumnDefinitions="Auto, Auto"                         Padding="10"                         ColumnSpacing="5">                        <Image                             Grid.RowSpan="2"                             Source="profile.png"                             Aspect="AspectFill"                             HeightRequest ="60"                              WidthRequest="60" />                        <Label                             Grid.Column="1"                             Text="{Binding Name, StringFormat='Name: {0}'}"                             FontSize="18" />                        <Label                             Grid.Row="1"                             Grid.Column="1"                             Text="{Binding Salary, StringFormat='Salary: {0}'}"                             FontSize="18" />                    </Grid>                </DataTemplate>            </CollectionView.ItemTemplate>        </CollectionView>    </StackLayout>
+    <StackLayout>        <Label             Text="List of Project Manager"             FontSize="20"             HorizontalOptions="Center"             TextColor="BlueViolet" Padding="10"             FontAttributes="Bold"/>        <!--<CollectionView ItemsSource="{Binding ProjectManager}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <local:CommonTemplate
+                Name="{Binding Name}"
+                Count="{Binding Salary}"
+                IsVisibleTitle ="False"
+            IsVisibleMemberCount ="False"
+                ImageSource="femaleprofile.png" />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>-->        <CollectionView ItemsSource="{Binding ProjectManager}"                                        
+                        ItemTemplate="{StaticResource ProjectManagerDataTemplateKey}">        </CollectionView>    </StackLayout>
 </ContentPage>

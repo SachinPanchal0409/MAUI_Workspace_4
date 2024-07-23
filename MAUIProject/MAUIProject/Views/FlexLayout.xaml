@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUIProject.Views.FlexLayout"
+             Title="FlexLayout">    <ScrollView>        <FlexLayout 
+                Direction="Column"  
+                Margin="5">
+            <Grid 
+                RowDefinitions="Auto, *">
+                <FlexLayout 
+                    Direction="Row"  
+                    JustifyContent="SpaceBetween">
+                    <Label 
+                        Text="Grocery Store" 
+                        FontSize="20"/>
+                    <Button 
+                        Text="Filter" 
+                        BackgroundColor="DarkCyan" 
+                        TextColor="White"/>
+                </FlexLayout>
+                <FlexLayout
+                    Grid.Row="1"
+                    Margin="20" 
+                    Direction="Row"  
+                    JustifyContent="SpaceBetween"  
+                    AlignItems="Center" 
+                    Wrap="Wrap">
+                    <StackLayout 
+                        Spacing="5">
+                        <Label 
+                            Text="Pulses" 
+                            FontSize="18"/>
+                        <Image 
+                            Source="pulses.png" 
+                            HeightRequest="150" 
+                            WidthRequest="150"/>
+                        <Label 
+                            Text="150 Rs" 
+                            FontSize="17"/>
+                    </StackLayout>
+
+                    <StackLayout 
+                        Spacing="5">
+                        <Label 
+                            Text="Milk" 
+                            FontSize="18"/>
+                        <Image 
+                            Source="milk.jpg" 
+                            HeightRequest="150" 
+                            WidthRequest="150"/>
+                        <Label 
+                            Text="100 Rs" 
+                            FontSize="17"/>
+                    </StackLayout>
+                    <StackLayout 
+                        Spacing="5">
+                        <Label 
+                            Text="Apple" 
+                            FontSize="18"/>
+                        <Image 
+                            Source="apple.jpg" 
+                            HeightRequest="150" 
+                            WidthRequest="150"/>
+                        <Label 
+                            Text="200 Rs" 
+                            FontSize="17"/>
+                    </StackLayout>
+                    <StackLayout 
+                        Spacing="5">
+                        <Label 
+                            Text="Pulses" 
+                            FontSize="18"/>
+                        <Image 
+                            Source="pulses.png" 
+                            HeightRequest="150" 
+                            WidthRequest="150"/>
+                        <Label 
+                            Text="150 Rs" 
+                            FontSize="17"/>
+                    </StackLayout>
+                    <StackLayout 
+                        Spacing="5">
+                        <Label 
+                            Text="Pulses" 
+                            FontSize="18"/>
+                        <Image 
+                            Source="pulses.png" 
+                            HeightRequest="150" 
+                            WidthRequest="150"/>
+                        <Label 
+                            Text="150 Rs" 
+                            FontSize="17"/>
+                    </StackLayout>
+                    <StackLayout 
+                        Spacing="5">
+                        <Label 
+                            Text="Milk" 
+                            FontSize="18"/>
+                        <Image 
+                            Source="milk.jpg" 
+                            HeightRequest="150" 
+                            WidthRequest="150"/>
+                        <Label 
+                            Text="100 Rs" 
+                            FontSize="17"/>
+                    </StackLayout>
+                    <StackLayout 
+                        Spacing="5">
+                        <Label 
+                            Text="Milk" 
+                            FontSize="18"/>
+                        <Image 
+                            Source="milk.jpg" 
+                            HeightRequest="150" 
+                            WidthRequest="150"/>
+                        <Label 
+                            Text="100 Rs" 
+                            FontSize="17"/>
+                    </StackLayout>
+                    <StackLayout 
+                        Spacing="5">
+                        <Label 
+                            Text="Apple" 
+                            FontSize="18"/>
+                        <Image 
+                            Source="apple.jpg" 
+                            HeightRequest="150" 
+                            WidthRequest="150"/>
+                        <Label 
+                            Text="100 Rs" 
+                            FontSize="17"/>
+                    </StackLayout>
+                    <StackLayout 
+                        Spacing="5">
+                        <Label 
+                            Text="Pulses" 
+                            FontSize="18"/>
+                        <Image 
+                            Source="pulses.png" 
+                            HeightRequest="150" 
+                            WidthRequest="150"/>
+                        <Label 
+                            Text="100 Rs" 
+                            FontSize="17"/>
+                    </StackLayout>
+                </FlexLayout>
+            </Grid>
+        </FlexLayout>    </ScrollView>
+</ContentPage>
+
+

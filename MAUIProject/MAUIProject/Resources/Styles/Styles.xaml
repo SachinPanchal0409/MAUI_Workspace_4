@@ -422,5 +422,185 @@
         <Setter Property="UnselectedTabColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray950}}" />
         <Setter Property="SelectedTabColor" Value="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource Gray200}}" />
     </Style>
+    <DataTemplate x:Key="ProjectManagerDataTemplateKey">
+        <Grid            
+            RowDefinitions="Auto, Auto"
+            ColumnDefinitions="Auto, Auto"
+            Padding="10" 
+            ColumnSpacing="5">
+            <Image 
+                Grid.RowSpan="2" 
+                Source="femaleprofile.png" 
+                Aspect="AspectFill" 
+                HeightRequest ="60" 
+                WidthRequest="60" />
+            <Label 
+                Grid.Column="1" 
+                Text="{Binding Name, StringFormat='Name: {0}'}" 
+                FontSize="18" />
+            <Label 
+                Grid.Row="1" 
+                Grid.Column="1" 
+                Text="{Binding Salary, StringFormat='Salary: {0}'}" 
+                FontSize="18" />
+        </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="TSEDataTemplateKey">
+        <Grid            
+            RowDefinitions="Auto, Auto, Auto"
+            ColumnDefinitions="Auto, Auto"
+            Padding="10" 
+            ColumnSpacing="5">
+            <Image 
+                Grid.RowSpan="3" 
+                Source="femaleprofile.png" 
+                Aspect="AspectFill" 
+                HeightRequest ="60" 
+                WidthRequest="60" />
+            <Label 
+                Grid.Column="1" 
+                Text="{Binding Name, StringFormat='Name: {0}'}" 
+                FontSize="18" />
+            <Label 
+                Grid.Row="1" 
+                Grid.Column="1" 
+                Text="{Binding ProjectName, StringFormat='Project Name: {0}'}" 
+                FontSize="18" />
+            <Label 
+                Grid.Row="2" 
+                Grid.Column="2" 
+                Text="{Binding Salary, StringFormat='Salary: {0}'}" 
+                FontSize="18" />
+        </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="LeadDataTemplateKey">
+        <Grid            
+            RowDefinitions="Auto, Auto, Auto"
+            ColumnDefinitions="Auto, Auto"
+            Padding="10" 
+            ColumnSpacing="5">
+            <Image 
+                Grid.RowSpan="3" 
+                Source="profile.png" 
+                Aspect="AspectFill" 
+                HeightRequest ="60" 
+                WidthRequest="60" />
+            <Label 
+                Grid.Column="1" 
+                Text="{Binding Name, StringFormat='Name: {0}'}" 
+                FontSize="18" />
+            <Label 
+                Grid.Row="1" 
+                Grid.Column="1" 
+                Text="{Binding NoOfTeams, StringFormat='No of Teams: {0}'}" 
+                FontSize="18" />
+            <Label 
+                Grid.Row="2" 
+                Grid.Column="2" 
+                Text="{Binding Salary, StringFormat='Salary: {0}'}" 
+                FontSize="18" />
+        </Grid>
+    </DataTemplate>
 
+    <DataTemplate x:Key="TraineeDataTemplateKey">
+        <Grid            
+           RowDefinitions="Auto, Auto, Auto"
+           ColumnDefinitions="Auto, Auto"
+           Padding="10" 
+           ColumnSpacing="5">
+            <Image 
+               Grid.RowSpan="3" 
+               Source="profile.png" 
+               Aspect="AspectFill" 
+               HeightRequest ="60" 
+               WidthRequest="60" />
+            <Label 
+               Grid.Column="1" 
+               Text="{Binding Name, StringFormat='Name: {0}'}" 
+               FontSize="18" />
+            <Label 
+               Grid.Row="1" 
+               Grid.Column="1" 
+               Text="{Binding Address, StringFormat='Address: {0}'}" 
+               FontSize="18" />
+            <Label 
+               Grid.Row="2" 
+               Grid.Column="2" 
+               Text="{Binding Age, StringFormat='Age: {0}'}" 
+               FontSize="18" />
+        </Grid>
+    </DataTemplate>
+
+
+    <DataTemplate x:Key="FoodTemplate">
+        <SwipeView>
+            <SwipeView.LeftItems>
+                <SwipeItems>
+                    <SwipeItem 
+                        Text="Favorite"
+                        IconImageSource="star.png"
+                        BackgroundColor="LightGreen"
+                        Command="{Binding FavoriteCommand}"/>
+                    <SwipeItem 
+                        Text="Delete"
+                        IconImageSource="delete.png"
+                        BackgroundColor="LightPink"
+                        Command="{Binding DeleteCommand}"/>
+                </SwipeItems>
+            </SwipeView.LeftItems>
+            <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, 2*" BackgroundColor="#D8EFD3" ColumnSpacing="15" RowSpacing="5">
+                <Image Grid.RowSpan="2" Source="{Binding ImageUrl}" HeightRequest="150" WidthRequest="150"/>
+                <Label Grid.Column="1" Text="{Binding Name}" FontSize="18"/>
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Price, StringFormat='{0} Rs'}" FontSize="18" FontAttributes="Italic"/>
+            </Grid>
+        </SwipeView>
+    </DataTemplate>
+
+   
+    <DataTemplate x:Key="BeverageTemplate">
+        <SwipeView>
+            <SwipeView.LeftItems>
+                <SwipeItems>
+                    <SwipeItem 
+                        Text="Favorite"
+                        IconImageSource="star.png"
+                        BackgroundColor="LightGreen"
+                        Command="{Binding FavoriteCommand}"/>
+                    <SwipeItem 
+                        Text="Delete"
+                        IconImageSource="delete.png"
+                        BackgroundColor="LightPink"
+                        Command="{Binding DeleteCommand}"/>
+                </SwipeItems>
+            </SwipeView.LeftItems>
+            <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, 2*" BackgroundColor="#F3F7EC"  ColumnSpacing="15" RowSpacing="5">
+                <Image Grid.RowSpan="2" Source="{Binding ImageUrl}" HeightRequest="150" WidthRequest="150"/>
+                <Label Grid.Column="1" Text="{Binding Name}" FontSize="18" TextColor="DarkGrey"/>
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Price, StringFormat='{0} Rs'}" FontSize="18" FontAttributes="Italic"/>
+            </Grid>
+        </SwipeView>
+    </DataTemplate>
+
+    <DataTemplate x:Key="FoodTemplateList">
+        <ImageCell ImageSource="{Binding ImageUrl}"
+                   Text="{Binding Name}"
+                   Detail="{Binding Price}"
+                   TextColor="Cyan"/>
+        <!--<ViewCell>
+            <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, 2*" BackgroundColor="#F3F7EC"  ColumnSpacing="15" RowSpacing="5">
+                <Image Grid.RowSpan="2" Source="{Binding ImageUrl}" HeightRequest="150" WidthRequest="150"/>
+                <Label Grid.Column="1" Text="{Binding Name}" FontSize="18" TextColor="DarkGrey"/>
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Price, StringFormat='{0} Rs'}" FontSize="18" FontAttributes="Italic"/>
+            </Grid>
+        </ViewCell>-->
+    </DataTemplate>
+
+    <DataTemplate x:Key="BeverageTemplateList">
+        <ImageCell ImageSource="{Binding ImageUrl}"
+                       Text="{Binding Name}"
+                       Detail="{Binding Price}"
+                   TextColor="Green"/>
+    </DataTemplate>
+
+   
 </ResourceDictionary>

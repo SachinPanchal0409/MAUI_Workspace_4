@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUIProject.Views.StackLayout"
+             Title="StackLayout">
+    <ScrollView>
+        <VerticalStackLayout Padding="5" Margin="5" Spacing="10">
+
+            <Image HeightRequest="150" WidthRequest="150" Source="dog.jpg" />
+            <Label HorizontalOptions="Center" Text="This is dummy Image"/>
+            <HorizontalStackLayout Spacing="15" HorizontalOptions="Center">
+                <Button Text="Explore More"/>
+                <Button Text="Cancel"/>
+            </HorizontalStackLayout>
+            <Label Text="Identify animal in image?" />
+            <RadioButton Content="Cat" />
+            <RadioButton Content="Dog" />
+            <RadioButton Content="Elephant"/>
+            <RadioButton Content="Monkey"
+            IsChecked="true" />
+            <HorizontalStackLayout Spacing="10">
+                <BoxView Color="Beige" CornerRadius="5" HeightRequest="150" WidthRequest="150"/>
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="This is box view" FontSize="20"/>
+                    <Button  Text="Click to know more!"/>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+            
+        </VerticalStackLayout>
+    </ScrollView>
+
+    
+</ContentPage>

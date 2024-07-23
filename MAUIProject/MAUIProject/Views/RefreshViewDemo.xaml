@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUIProject.Views.RefreshViewDemo"
+             Title="RefreshView">
+    <RefreshView IsRefreshing="{Binding IsRefreshing}" Command="{Binding RefreshCommand}">
+        <ScrollView>
+          
+            <StackLayout>
+                <Image Source="milk.jpg"/>
+                <Label Margin="10,5,10,5" FontSize="18" Text="This is the app for the grocery store. Refresh the screen to get new item displayed!"/>
+            </StackLayout>
+        </ScrollView>
+    </RefreshView>
+
+</ContentPage>
