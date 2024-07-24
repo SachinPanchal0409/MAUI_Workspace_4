@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUIProject.Views.GridLayoutExample"
+             Title="GridLayoutExample">
+    <Grid 
+        RowDefinitions="*,*,*,2*,*,*,*" 
+        ColumnDefinitions="*,*" 
+        Padding="5" 
+        RowSpacing="2" 
+        ColumnSpacing="2">
+        <BoxView 
+            Grid.Row="0" 
+            Grid.RowSpan="3" 
+            Grid.ColumnSpan="2" 
+            Color="AliceBlue"  
+            CornerRadius="5"/>
+        <Image 
+            Source="profile.png" 
+            HeightRequest="150" 
+            WidthRequest="150" 
+            Grid.RowSpan="3"/>
+        <Label 
+            Grid.Column="1" 
+            FontSize="18" 
+            Text="Name: Alice" 
+            VerticalOptions="Center"/>
+        <Label 
+            Grid.Row="1" 
+            Grid.Column="1" 
+            FontSize="18" 
+            Text="Age: 21" 
+            VerticalOptions="Center"/>
+        <Label 
+            Grid.Row="2" 
+            Grid.Column="1" 
+            FontSize="18" 
+            Text="Address: Ahmedabad" 
+            VerticalOptions="Center"/>
+        <BoxView 
+            Grid.Row="3" 
+            Grid.RowSpan="3" 
+            Grid.ColumnSpan="2" 
+            Color="LightGrey"  
+            CornerRadius="5"/>
+        <Label 
+            Grid.Row="3" 
+            Grid.ColumnSpan="2" 
+            FontSize="15" 
+            Text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel,"/>
+        <BoxView 
+            Grid.Row="4" 
+            Grid.RowSpan="3" 
+            Grid.ColumnSpan="2" 
+            Color="LightCyan" 
+            CornerRadius="5"/>
+        <Label 
+            Grid.Row="4" 
+            FontSize="18" 
+            Text="Name: Bob"  
+            VerticalOptions="Center"/>
+        <Label 
+            Grid.Row="5" 
+            FontSize="18" 
+            Text="Age: 22"  
+            VerticalOptions="Center"/>
+        <Label 
+            Grid.Row="6" 
+            FontSize="18" 
+            Text="Address: Rajkot"  
+            VerticalOptions="Center"/>
+        <Image 
+            Source="femaleprofile.png" 
+            HeightRequest="150" 
+            WidthRequest="150" 
+            Grid.Row="4" 
+            Grid.RowSpan="3" 
+            Grid.Column="1"/>
+    </Grid> 
+</ContentPage>
+
+

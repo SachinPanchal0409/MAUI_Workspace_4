@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUIProject.Views.CommonTemplate"
+             Title="CommonTemplate">
+    <ContentView.ControlTemplate>
+        <ControlTemplate>
+            <Grid
+                RowDefinitions="Auto, Auto, Auto"
+                ColumnDefinitions="Auto, Auto"
+                 Padding="10" 
+                ColumnSpacing="5">
+
+                <Image Grid.RowSpan="3"
+                Source="{TemplateBinding ImageSource}"
+                Aspect="AspectFill"
+                HeightRequest="60"
+                WidthRequest="60" />
+
+                <Label Grid.Column="1"
+                Text="{TemplateBinding Name}"
+                FontSize="18" />
+                
+                <Label Grid.Row="1"
+                Grid.Column="1"
+                Text="{TemplateBinding Title}"
+                IsVisible="{TemplateBinding IsVisibleTitle}"
+                FontSize="18" />
+                <Label Grid.Row="1"
+                Grid.Column="1"
+                Text="{TemplateBinding MemberCount}"
+                IsVisible="{TemplateBinding IsVisibleMemberCount}"
+                FontSize="18" />
+
+                <Label Grid.Row="2"
+                Grid.Column="1"
+                Text="{TemplateBinding Count}"
+                FontSize="18" />
+            </Grid>
+        </ControlTemplate>
+    </ContentView.ControlTemplate>
+   
+</ContentView>

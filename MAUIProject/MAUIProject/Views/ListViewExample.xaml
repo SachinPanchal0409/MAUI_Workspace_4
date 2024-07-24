@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MAUIProject"
+             xmlns:controls="clr-namespace:MAUIProject.controls"
+             x:Class="MAUIProject.Views.ListViewExample"
+             Title="ListViewExample">
+    <ScrollView>
+        <VerticalStackLayout>
+            <Button Text="Filter" ImageSource="filter.png" HeightRequest="45" Margin="5" Command="{Binding FilterButtonListCommand}"/>
+            <ListView
+                ItemsSource="{Binding UnfilteredItemsList}"          
+                ItemTemplate="{StaticResource itemTemplateSelectorlist}"
+                Margin="5">
+            </ListView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

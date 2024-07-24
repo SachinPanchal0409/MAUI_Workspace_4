@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUIProject.Views.AbsoluteLayout"
+             Title="AbsoluteLayout">
+    <AbsoluteLayout Background="AliceBlue">
+        <BoxView x:Name="box"
+                 Color="Red"
+                 AbsoluteLayout.LayoutBounds="0, 0, 100, 200"
+                 AbsoluteLayout.LayoutFlags="PositionProportional" />
+        <BoxView
+              Color="DeepPink"
+              AbsoluteLayout.LayoutBounds="0.4, 0, 100, 100"
+              AbsoluteLayout.LayoutFlags="PositionProportional" />
+        <BoxView
+              Color="Yellow"
+              AbsoluteLayout.LayoutBounds="1, 0, 0.4, 0.1"
+              AbsoluteLayout.LayoutFlags="All"/>
+        <BoxView
+             Color="Green"
+             AbsoluteLayout.LayoutBounds="120, 130, 0.4, 0.1"
+             AbsoluteLayout.LayoutFlags="SizeProportional"/>
+
+        <BoxView
+            Color="Brown"
+            AbsoluteLayout.LayoutBounds="1, 0.2, 0.2, 0.3"
+            AbsoluteLayout.LayoutFlags="All"/>
+        <BoxView
+             Color="PaleVioletRed"
+             AbsoluteLayout.LayoutBounds="0, 220, 0.7, 0.2"
+             AbsoluteLayout.LayoutFlags="SizeProportional"/>
+        <BoxView
+            Color="Purple"
+            AbsoluteLayout.LayoutBounds="0, 380,1,0.5"
+            AbsoluteLayout.LayoutFlags="SizeProportional"/>
+    </AbsoluteLayout>
+</ContentPage>

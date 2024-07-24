@@ -1,27 +1,18 @@
-<?xml version="1.0" encoding="utf-8" ?><ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"             x:Class="MAUIProject.Views.TSE"             Title="TSE">    <StackLayout>        <Label             Text="List of Trainee Software Engineers"             FontSize="20"             HorizontalOptions="Center"             TextColor="BlueViolet"             Padding="10"             FontAttributes="Bold"/>        <CollectionView ItemsSource="{Binding TSE}">            <CollectionView.ItemTemplate>                <DataTemplate>                    <Grid 
-                        RowDefinitions="Auto, Auto, Auto"
-                        ColumnDefinitions="Auto, Auto"
-                        Padding="10" 
-                        ColumnSpacing="5">
-                        <Image 
-                            Grid.RowSpan="3" 
-                            Source="profile.png" 
-                            Aspect="AspectFill" 
-                            HeightRequest ="60"  
-                            WidthRequest="60" />
-                        <Label 
-                            Grid.Column="1" 
-                            Text="{Binding Name, StringFormat='Name: {0}'}" 
-                            FontSize="18" />
-                        <Label 
-                            Grid.Row="1" 
-                            Grid.Column="1" 
-                            Text="{Binding ProjectName, StringFormat='Project Name: {0}'}" 
-                            FontSize="18" />
-                        <Label 
-                            Grid.Row="2" 
-                            Grid.Column="2" 
-                            Text="{Binding Salary, StringFormat='Salary: {0}'}" 
-                            FontSize="18" />
-                    </Grid>                </DataTemplate>            </CollectionView.ItemTemplate>        </CollectionView>    </StackLayout></ContentPage>
+<?xml version="1.0" encoding="utf-8" ?><ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"             x:Class="MAUIProject.Views.TSE"             xmlns:local="clr-namespace:MAUIProject.Views"             Title="TSE">    <StackLayout>        <Label             Text="List of Trainee Software Engineers"             FontSize="20"             HorizontalOptions="Center"             TextColor="BlueViolet"             Padding="10"             FontAttributes="Bold"/>        <!--<CollectionView ItemsSource="{Binding TSE}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <local:CommonTemplate
+                         Name="{Binding Name}"
+                         Title="{Binding ProjectName}"
+                         Count="{Binding Salary}"
+                        IsVisibleTitle ="True"
+                        IsVisibleMemberCount ="False"
+                         ImageSource="femaleprofile.png" />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>-->        <CollectionView ItemsSource="{Binding TSE}"                                        
+                                      ItemTemplate="{StaticResource TSEDataTemplateKey}">                    </CollectionView>        <!--<local:ExtendedCollectionView ItemsSource="{Binding TSE}"                                        
+                                      ItemTemplate="{StaticResource DataTemplateKey}" >
+             
+        </local:ExtendedCollectionView>-->    </StackLayout></ContentPage>
 

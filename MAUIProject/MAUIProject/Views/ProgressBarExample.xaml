@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUIProject.Views.ProgressBarExample"
+             Title="ProgressBarExample">
+    <VerticalStackLayout Spacing="10">
+        <ProgressBar Margin="10" Progress="{Binding ProgressValue}"/>
+        <Label Margin="10" HorizontalOptions="Center" Text="{Binding PercentageText}"/>
+        <Button Text="Click!" Command="{Binding ProgressBarValueCommand}"/>
+    </VerticalStackLayout>
+</ContentPage>
