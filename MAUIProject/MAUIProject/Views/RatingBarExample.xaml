@@ -3,23 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MAUIProject.Views.RatingBarExample"
              Title="RatingBarExample">
-    <!--<StackLayout Margin="20">
-        <CollectionView ItemsSource="{Binding RatingIcons}">
+    <StackLayout Margin="20">
+        <CollectionView ItemsSource="{Binding Stars}" SelectionMode="Single" SelectedItem="{Binding SelectedItemData}">
             <CollectionView.ItemsLayout>
-                <GridItemsLayout Orientation="Horizontal" Span="5" />
+                <LinearItemsLayout Orientation="Horizontal" ItemSpacing="5" />
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Image Source="{Binding IconSource}"
-               WidthRequest="40"
-               HeightRequest="40"
-               Aspect="AspectFit"/>
+                    <Image 
+                        Source="{Binding ImageUrl}"
+                        WidthRequest="40"
+                        HeightRequest="40"
+                        BackgroundColor="{Binding Bgcolor}"
+                        Aspect="AspectFit"/>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-    </StackLayout>-->
-    <!--<VerticalStackLayout>
-        <Entry x:Name="nameValue" Text="{Binding Name}" FontSize="18"/>
-        <Button Text="Submit" Command="{Binding SubmitNameCommand}"/>
-    </VerticalStackLayout>-->
+        <Label Text="Rating: "/>
+        <Label Text="{Binding Rating}" FontSize="18"/>
+    </StackLayout>
+
 </ContentPage>

@@ -1,18 +1,20 @@
 ﻿using CommunityToolkit.Maui.Alerts;
 using CommunityToolkit.Maui.Core;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System.ComponentModel;
-using System.Threading;
 
 namespace MAUIProject.ViewModels
 {
-    public partial class ButtonViewModel : INotifyPropertyChanged
-    {
+    public partial class ButtonViewModel :ObservableObject, INotifyPropertyChanged
+    { 
         private int _age;
        
         private bool _isAgeValid;
         private bool _isVisibleRadioButtons;
 
+        [ObservableProperty]
+        public string selection;
         public int Age
         {
             get { return _age; }
@@ -103,7 +105,7 @@ namespace MAUIProject.ViewModels
         [RelayCommand]
         public void VoteSubmit()
         {
-            Toast.Make("Vote Submitted!",
+            Toast.Make($"Vote Submitted! {Selection}",
                   ToastDuration.Long,
            16)
             .Show();

@@ -7,9 +7,8 @@
              Title="ListViewExample">
     <ScrollView>
         <VerticalStackLayout>
-            <Button Text="Filter" ImageSource="filter.png" HeightRequest="45" Margin="5" Command="{Binding FilterButtonListCommand}"/>
             <ListView
-                ItemsSource="{Binding UnfilteredItemsList}"          
+                ItemsSource= "{Binding UnfilteredItemsList}"         
                 ItemTemplate="{StaticResource itemTemplateSelectorlist}"
                 Margin="5">
             </ListView>

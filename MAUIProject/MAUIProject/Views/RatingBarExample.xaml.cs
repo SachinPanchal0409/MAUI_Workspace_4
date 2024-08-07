@@ -9,4 +9,5 @@ public partial class RatingBarExample : ContentPage
 		InitializeComponent();
 		BindingContext = ratingBarViewModel;
 	}
+    
 }

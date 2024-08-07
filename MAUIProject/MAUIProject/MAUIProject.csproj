@@ -74,18 +74,31 @@
 
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Maui" Version="8.0.1" />
+		<PackageReference Include="CommunityToolkit.Maui.Maps" Version="2.0.2" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.70" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="8.0.71" />
+		<PackageReference Include="Plugin.Fingerprint" Version="2.1.5" />
+		<PackageReference Include="Plugin.LocalNotification" Version="11.1.4" />
+		<PackageReference Include="Plugin.Maui.Biometric" Version="0.0.2" />
 		<PackageReference Include="Syncfusion.Maui.ProgressBar" Version="26.1.42" />
+		<!--<PackageReference Include="FirebaseAdmin" Version="3.0.0" />-->
 	</ItemGroup>
+
+
 
 	<ItemGroup>
 	  <MauiXaml Update="Views\AbsoluteLayout.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Account.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\BiometricAlternativeExample.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\BiometricExample.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\ButtonsExample.xaml">
@@ -118,6 +131,12 @@
 	  <MauiXaml Update="Views\ListViewExample.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\MapExample.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\NotificationExample.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\ProgressBarExample.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -148,6 +167,20 @@
 	  <MauiXaml Update="Views\TSE.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	</ItemGroup>
+
+
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net8.0-android'">
+	  <PackageReference Include="Xamarin.AndroidX.Fragment.Ktx">
+	    <Version>1.8.1.1</Version>
+	  </PackageReference>
+	</ItemGroup>
+
+
+
+	<ItemGroup>
+	  <Folder Include="Platforms\Android\Resources\drawable\" />
 	</ItemGroup>
 
 </Project>

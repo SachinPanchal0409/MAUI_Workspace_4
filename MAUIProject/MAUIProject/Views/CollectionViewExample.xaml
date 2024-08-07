@@ -5,16 +5,18 @@
              xmlns:controls="clr-namespace:MAUIProject.controls"
              x:Class="MAUIProject.Views.CollectionViewExample"
              Title="Collection View">
-
+   
     <ScrollView>
-        <VerticalStackLayout>
-            <Button Text="Filter" ImageSource="filter.png" HeightRequest="45" Margin="5" Command="{Binding FilterButtonCommand}" />
 
+        <VerticalStackLayout>
+            
+            <Button Text="Filter" ImageSource="filter.png" HeightRequest="45" Margin="5" Command="{Binding FilterButtonCommand}" />
             <CollectionView
-                ItemsSource="{Binding UnfilteredItems}"          
+                ItemsSource="{Binding UnfilteredItems}"    
                 ItemTemplate="{StaticResource itemTemplateSelector}"
                 SelectionMode="Single"
                 SelectedItem="{Binding SelectedItemData}"
+                EmptyView="No items to display"
                 Margin="5">
             </CollectionView>
         </VerticalStackLayout>

@@ -548,11 +548,18 @@
                         Command="{Binding DeleteCommand}"/>
                 </SwipeItems>
             </SwipeView.LeftItems>
-            <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, 2*" BackgroundColor="#D8EFD3" ColumnSpacing="15" RowSpacing="5">
-                <Image Grid.RowSpan="2" Source="{Binding ImageUrl}" HeightRequest="150" WidthRequest="150"/>
-                <Label Grid.Column="1" Text="{Binding Name}" FontSize="18"/>
-                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Price, StringFormat='{0} Rs'}" FontSize="18" FontAttributes="Italic"/>
-            </Grid>
+            <Frame
+                Margin="2"
+                BackgroundColor="Beige"
+                HasShadow="True"
+                BorderColor="LightGray"
+                CornerRadius="5" >
+                <Grid  WidthRequest="350" RowDefinitions="Auto, Auto" ColumnDefinitions="*, 2*" BackgroundColor="#D8EFD3" ColumnSpacing="15" RowSpacing="5">
+                    <Image Grid.RowSpan="2" Source="{Binding ImageUrl}" HeightRequest="120" WidthRequest="120"/>
+                    <Label Grid.Column="1" Text="{Binding Name}" FontSize="18"/>
+                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding Price, StringFormat='{0} Rs'}" FontSize="18" FontAttributes="Italic"/>
+                </Grid>
+            </Frame>
         </SwipeView>
     </DataTemplate>
 
@@ -573,11 +580,18 @@
                         Command="{Binding DeleteCommand}"/>
                 </SwipeItems>
             </SwipeView.LeftItems>
-            <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, 2*" BackgroundColor="#F3F7EC"  ColumnSpacing="15" RowSpacing="5">
-                <Image Grid.RowSpan="2" Source="{Binding ImageUrl}" HeightRequest="150" WidthRequest="150"/>
-                <Label Grid.Column="1" Text="{Binding Name}" FontSize="18" TextColor="DarkGrey"/>
-                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Price, StringFormat='{0} Rs'}" FontSize="18" FontAttributes="Italic"/>
-            </Grid>
+            <Frame 
+                Margin="2"
+                BackgroundColor="Beige"
+                HasShadow="True"
+                BorderColor="LightGray"
+                CornerRadius="5" >
+                <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, 2*" BackgroundColor="#F3F7EC"  ColumnSpacing="15" RowSpacing="5" WidthRequest="350">
+                    <Image Grid.RowSpan="2" Source="{Binding ImageUrl}" HeightRequest="120" WidthRequest="120"/>
+                    <Label Grid.Column="1" Text="{Binding Name}" FontSize="18" TextColor="DarkGrey"/>
+                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding Price, StringFormat='{0} Rs'}" FontSize="18" FontAttributes="Italic"/>
+                </Grid>
+            </Frame>
         </SwipeView>
     </DataTemplate>
 
@@ -585,14 +599,7 @@
         <ImageCell ImageSource="{Binding ImageUrl}"
                    Text="{Binding Name}"
                    Detail="{Binding Price}"
-                   TextColor="Cyan"/>
-        <!--<ViewCell>
-            <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, 2*" BackgroundColor="#F3F7EC"  ColumnSpacing="15" RowSpacing="5">
-                <Image Grid.RowSpan="2" Source="{Binding ImageUrl}" HeightRequest="150" WidthRequest="150"/>
-                <Label Grid.Column="1" Text="{Binding Name}" FontSize="18" TextColor="DarkGrey"/>
-                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Price, StringFormat='{0} Rs'}" FontSize="18" FontAttributes="Italic"/>
-            </Grid>
-        </ViewCell>-->
+                   TextColor="CadetBlue"/>
     </DataTemplate>
 
     <DataTemplate x:Key="BeverageTemplateList">

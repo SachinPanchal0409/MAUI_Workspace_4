@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace MAUIProject.Models
 {
-    public class CollectionViewModel : FoodListModel
+    public class MapModel
     {
+        public string Label { get; set; }
+        public string Address { get; set; }
+        public Location Location { get; set; }
+
     }
 }

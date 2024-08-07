@@ -2,10 +2,41 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MAUIProject.Views.ProgressBarExample"
+             xmlns:local="clr-namespace:MAUIProject.Views"
              Title="ProgressBarExample">
+    <ContentPage.MenuBarItems>
+        <MenuBarItem Text="File">
+            <MenuFlyoutItem Text="Copy"/>
+        </MenuBarItem>
+        <MenuBarItem Text="Location">
+            <MenuFlyoutSubItem Text="Change Location">
+                <MenuFlyoutItem Text="Add Location" Command="{Binding MenuactionCommand}" CommandParameter="Addlocation">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Ctrl"
+                             Key="P" />
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+                <MenuFlyoutItem Text="View Location" Command="{Binding MenuactionCommand}" CommandParameter="Viewlocation">
+                </MenuFlyoutItem>
+            </MenuFlyoutSubItem>
+            <MenuFlyoutSeparator/>
+            <MenuFlyoutItem Text="Delete Location" Command="{Binding MenuactionCommand}" CommandParameter="Deletelocation"/>
+        </MenuBarItem>
+        <MenuBarItem Text="View">
+            <MenuFlyoutItem Text="View Data" Command="{Binding MenuactionCommand}" CommandParameter="Viewdata"/>
+        </MenuBarItem>
+    </ContentPage.MenuBarItems>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary" Text="Setting"/>
+        <ToolbarItem Order="Secondary" Text="Logout"/>
+        <ToolbarItem Text="Account"/>
+    </ContentPage.ToolbarItems>
+    
+    
     <VerticalStackLayout Spacing="10">
         <ProgressBar Margin="10" Progress="{Binding ProgressValue}"/>
         <Label Margin="10" HorizontalOptions="Center" Text="{Binding PercentageText}"/>
         <Button Text="Click!" Command="{Binding ProgressBarValueCommand}"/>
+
     </VerticalStackLayout>
 </ContentPage>

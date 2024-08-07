@@ -1,5 +1,9 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Windows.Input;
 
 namespace MAUIProject.ViewModels
 {
@@ -11,15 +15,12 @@ namespace MAUIProject.ViewModels
         [ObservableProperty]
         public string percentageText;
 
-   
-
         private System.Timers.Timer _timer;
+      
         public ProgressBarViewModel()
         {
             this.progressValue = 0.001;
             this.percentageText = "0%";
-           
-            
         }
 
         [RelayCommand]
@@ -42,5 +43,12 @@ namespace MAUIProject.ViewModels
                 _timer.Stop();
             }
         }
+
+        [RelayCommand]
+        public void Menuaction(string value)
+        {
+            Toast.Make($"{value}  Clicked!!").Show();
+        }
+
     }
 }
