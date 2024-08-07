@@ -1,65 +1,84 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using MAUIProject.Models;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows.Input;
 
 namespace MAUIProject.ViewModels
 {
     public partial class RatingBarViewModel : ObservableObject
     {
-    //    private int _rating;
 
-    //    public RatingBarViewModel()
-    //    {
-           
-    //        Rating = 0;
-    //    }
+        [ObservableProperty]
+        public int rating;
 
-    //    public int Rating
-    //    {
-    //        get { return _rating; }
-    //        set
-    //        {
-    //            if (_rating != value)
-    //            {
-    //                _rating = value;
-    //                OnPropertyChanged();
-    //            }
-    //        }
-    //    }
+        private RatingBarModel selectedItemData;
+        public ICommand ItemSelectedCommand { get; }
+        public ObservableCollection<RatingBarModel> Items { get; set; }
+        public ObservableCollection<RatingBarModel> Stars { get; set; }
+        public RatingBarViewModel()
+        {
+            Rating = 0;
+            Items = new ObservableCollection<RatingBarModel>()
+            {
+                new RatingBarModel {Value = 1,  ImageUrl = "star.png", Bgcolor = "AliceBlue" },
+                new RatingBarModel  {Value = 2,  ImageUrl = "star.png", Bgcolor = "AliceBlue" },
+                new RatingBarModel  {Value = 3,  ImageUrl = "star.png", Bgcolor = "AliceBlue" },
+                new RatingBarModel  {Value = 4,  ImageUrl = "star.png", Bgcolor = "AliceBlue" },
+                new RatingBarModel  {Value = 5,  ImageUrl = "star.png", Bgcolor = "AliceBlue" },
+            };
+            Stars = new ObservableCollection<RatingBarModel>(Items);
+            ItemSelectedCommand = new Command<RatingBarModel>(OnItemSelected);
+        }
 
-    //    public ObservableCollection<string> RatingIcons { get; } = new ObservableCollection<string>
-    //    {
-    //        "star.png",   
-    //        "star.png",
-    //        "star.png",
-    //        "star.png",
-    //        "star.png"
-    //    };
+        public RatingBarModel SelectedItemData
+        {
+            get => selectedItemData;
+            set
+            {
+                if (SetProperty(ref selectedItemData, value))
+                {
+                    ItemSelectedCommand.Execute(selectedItemData);
+                }
+            }
+        }
 
-    //    public event PropertyChangedEventHandler PropertyChanged;
 
-    //    protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-    //    {
-    //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-    //    }
-    //}
+        private async void OnItemSelected(RatingBarModel selectedItem)
+        {
+            Rating = selectedItem.Value;
 
-    //[ObservableProperty]
-    //public string name;
+            for (int i = 0; i < Items.Count; i++)
+            {
 
-    //public RatingBarViewModel()
-    //{
+                if (Items[i].Value <= selectedItem.Value)
+                {
+                    Stars[i].Value = Items[i].Value;
+                    Stars[i].ImageUrl = "starcolor.png";
+                    Stars[i].Bgcolor = "CadetBlue";
+                }
+                else
+                {
+                    Stars[i].Value = Items[i].Value;
+                    Stars[i].ImageUrl = "star.png";
+                    Stars[i].Bgcolor = "AliceBlue";
+                }
 
-    //}
+            }
+        }
 
-    //[RelayCommand]
-    //public void SubmitName()
-    //{
-    //    Console.WriteLine("Name: " + Name);
-    //}
+        public event PropertyChangedEventHandler PropertyChanged;
 
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+    }
 }
 
-}
+
+
+
+

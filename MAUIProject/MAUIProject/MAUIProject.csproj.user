@@ -17,6 +17,12 @@
     <MauiXaml Update="Views\Account.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Views\BiometricAlternativeExample.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="Views\BiometricExample.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Views\ButtonsExample.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
@@ -45,6 +51,12 @@
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="Views\ListViewExample.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="Views\MapExample.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="Views\NotificationExample.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="Views\ProgressBarExample.xaml">

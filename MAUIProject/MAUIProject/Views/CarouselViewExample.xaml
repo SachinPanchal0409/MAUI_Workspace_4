@@ -3,8 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MAUIProject.Views.CarouselViewExample"
              Title="CarouselViewExample">
-    <StackLayout  Background="#BEC6A0">
-        <CarouselView ItemsSource="{Binding Items}" IndicatorView="indicatorView"   PeekAreaInsets="150">
+    <StackLayout  
+        Background="#BEC6A0">
+        <Label 
+             Text="Menu" 
+             FontSize="20" 
+             FontAttributes="Bold" 
+             HorizontalOptions="Center" 
+             VerticalOptions="Center"/> 
+        <CarouselView 
+            ItemsSource="{Binding Items}" 
+            IndicatorView="indicatorView"   
+            PeekAreaInsets="150">
             <CarouselView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout Margin="15">
@@ -36,12 +46,7 @@
                                 </VisualState>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
-                        <Label 
-                            Text="Menu" 
-                            FontSize="20" 
-                            FontAttributes="Bold" 
-                            HorizontalOptions="Center" 
-                            VerticalOptions="Center"/>
+                       
                         <Frame 
                             BackgroundColor="Beige"
                             HasShadow="True"

@@ -22,9 +22,6 @@
                 VerticalOptions="Center"
                 HorizontalOptions="Center"
                 Command="{Binding ShowRadioButtonsCommand}"/>
-        <!--<Switch OnColor="Orange"
-        ThumbColor="Green" 
-                IsToggled="True"/>-->
         <Switch IsToggled="False">
             <VisualStateManager.VisualStateGroups>
                 <VisualStateGroup x:Name="CommonStates">
@@ -43,12 +40,13 @@
                 </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
         </Switch>
-        <VerticalStackLayout IsVisible="{Binding IsVisibleRadioButtons}">
+        <VerticalStackLayout IsVisible="{Binding IsVisibleRadioButtons}" RadioButtonGroup.GroupName="radios" RadioButtonGroup.SelectedValue="{Binding Selection}">
             <Label Text="Choose your Head Girl" />
-            <RadioButton Content="Girl 1" />
-            <RadioButton Content="Girl 2" />
-            <RadioButton Content="Girl 3" />
-            <RadioButton Content="Girl 4"/>
+     
+            <RadioButton Content="Girl 1" GroupName="radios" Value="Girl 1" />
+            <RadioButton Content="Girl 2"  GroupName="radios" Value="Girl 2"/>
+            <RadioButton Content="Girl 3" GroupName="radios"  Value="Girl 3"/>
+            <RadioButton Content="Girl 4" GroupName="radios" Value="Girl 4"/>
             <Button Text="Submit Vote!" Command="{Binding VoteSubmitCommand}"/>
         </VerticalStackLayout>
 
